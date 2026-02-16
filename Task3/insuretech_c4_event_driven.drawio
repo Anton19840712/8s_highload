@@ -1,0 +1,88 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/25.0.2 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="25.0.2">
+  <diagram id="c4-event-driven" name="InsureTech C4 Container - Event Driven">
+    <mxGraphModel dx="1802" dy="1037" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="InsureTech — C4 Container Diagram (to-be, Event-Driven)" style="text;html=1;align=center;fontSize=18;fontStyle=1;fontColor=#333333;fillColor=none;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="250" y="10" width="600" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="person-client" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;Клиент&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Person]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Подбирает и оформляет&lt;br&gt;страховки через сайт&lt;/div&gt;" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;container=1;fontSize=11;fontColor=#ffffff;fillColor=#08427B;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+          <mxGeometry x="460" y="50" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="person-b2b" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;B2B Партнёр&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Person]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Использует API для&lt;br&gt;интеграции страховых услуг&lt;/div&gt;" style="shape=mxgraph.c4.person2;whiteSpace=wrap;html=1;container=1;fontSize=11;fontColor=#ffffff;fillColor=#08427B;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+          <mxGeometry x="850" y="50" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="c-webapp" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;Web Application&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: SPA, JavaScript]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Фронтенд приложения&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#3C7FC0;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="440" y="280" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-core" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;core-app&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Java/Spring]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Продукты, заявки, оформление&lt;br&gt;страховок. Transactional Outbox&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#3C7FC0;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="100" y="450" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-clientinfo" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;client-info&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Java/Spring]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Управление клиентскими данными&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#3C7FC0;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="440" y="450" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-aggregator" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;ins-product-aggregator&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Java/Spring]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Агрегация данных от страховых&lt;br&gt;компаний. Публикует products.updated&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#3C7FC0;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="100" y="750" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-settlement" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;ins-comp-settlement&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Java/Spring]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Взаиморасчёты со страховыми&lt;br&gt;компаниями. Подписан на Kafka.&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#3C7FC0;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="820" y="740" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="c-kafka" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;Apache Kafka&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Message Broker]&lt;/div&gt;&lt;br&gt;&lt;div&gt;Топики: products.updated,&lt;br&gt;insurance.policy.created, client.updated&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#438DD5;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#3C7FC0;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="460" y="750" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="db-core" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Database]&lt;/div&gt;&lt;br&gt;&lt;div&gt;schema: core_app + outbox&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;size=15;boundedLbl=1;backgroundOutline=1;fontSize=11;fillColor=#438DD5;fontColor=#ffffff;strokeColor=#3C7FC0;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="100" y="620" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="db-client" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Database]&lt;/div&gt;&lt;br&gt;&lt;div&gt;schema: client_info&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;size=15;boundedLbl=1;backgroundOutline=1;fontSize=11;fillColor=#438DD5;fontColor=#ffffff;strokeColor=#3C7FC0;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="480" y="620" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="db-settle" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;PostgreSQL&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[Container: Database]&lt;/div&gt;&lt;br&gt;&lt;div&gt;schema: settlement&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;size=15;boundedLbl=1;backgroundOutline=1;fontSize=11;fillColor=#438DD5;fontColor=#ffffff;strokeColor=#3C7FC0;labelBackgroundColor=none;" parent="1" vertex="1">
+          <mxGeometry x="870" y="620" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ext-ins" value="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;Страховые компании&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[External System]&lt;/div&gt;&lt;br&gt;&lt;div&gt;10 компаний, REST API&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;labelBackgroundColor=none;fillColor=#999999;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#8A8A8A;metaEdit=1;resizable=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0]];" parent="1" vertex="1">
+          <mxGeometry x="100" y="950" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" value="&lt;div&gt;Использует&lt;/div&gt;&lt;div&gt;[HTTPS]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="person-client" target="c-webapp" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" value="&lt;div&gt;REST API&lt;/div&gt;&lt;div&gt;[Rate Limiting]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="person-b2b" target="c-core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" value="&lt;div&gt;REST API&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-webapp" target="c-core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" value="&lt;div&gt;REST API&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-webapp" target="c-clientinfo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r5" value="&lt;div&gt;REST API&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-core" target="c-clientinfo" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r6" value="&lt;div&gt;Читает/пишет&lt;/div&gt;&lt;div&gt;[TCP]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-core" target="db-core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r7" value="&lt;div&gt;Читает/пишет&lt;/div&gt;&lt;div&gt;[TCP]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-clientinfo" target="db-client" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r8" value="&lt;div&gt;Читает/пишет&lt;/div&gt;&lt;div&gt;[TCP]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-settlement" target="db-settle" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r9" value="&lt;div&gt;Публикует события&lt;/div&gt;&lt;div&gt;[insurance.policy.created]&lt;/div&gt;&lt;div&gt;Transactional Outbox&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-core" target="c-kafka" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r10" value="&lt;div&gt;Публикует события&lt;/div&gt;&lt;div&gt;[products.updated]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-aggregator" target="c-kafka" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r11" value="&lt;div&gt;Подписан на&lt;/div&gt;&lt;div&gt;[products.updated]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;dashed=1;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-kafka" target="c-core" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" value="&lt;div&gt;Подписан на&lt;/div&gt;&lt;div&gt;[products.updated,&lt;br&gt;insurance.policy.created]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;dashed=1;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-kafka" target="c-settlement" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r13" value="&lt;div&gt;Запрашивает данные&lt;/div&gt;&lt;div&gt;[REST, Circuit Breaker,&lt;br&gt;Timeout: 5s, Retry: 3]&lt;/div&gt;" style="endArrow=blockThin;html=1;fontSize=10;fontColor=#404040;strokeWidth=1;endFill=1;strokeColor=#828282;elbow=vertical;metaEdit=1;endSize=14;startSize=14;jumpStyle=arc;jumpSize=16;rounded=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="c-aggregator" target="ext-ins" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
