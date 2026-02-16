@@ -1,28 +1,21 @@
 # InsureTech Sprint 8 Overview
 
-Эта папка `8s_highload` содержит всё, что требуется для Sprint 8: архитектурные артефакты и нагрузочные доки.
+В этой папке содержится всё по Task1–Task6: архитектурные диаграммы, конфигурации и доказательства Task2.
 
-## Кратко по заданиям
-| Task | Суть | Где смотреть |
+| Task | Краткое описание | Файл |
 | --- | --- | --- |
 | Task1 | Технологическая архитектура To-Be | `Task1/InureTech_технологическая архитектура_to-be.drawio` |
-| Task2 | Dynamic Scaling: манифесты, HPA, Locust, лог + доказательства | `Task2/README.md`, `Task2/*.yaml`, `Task2/locustfile.py`, `Task2/scale-*.jpg` |
+| Task2 | Dynamic Scaling и нагрузка Locust | `Task2/README.md`, `Task2/*.yaml`, `Task2/scale-memory.jpg`, `Task2/scale-rps.jpg`, `Task2/scale-rps-aux.jpg` |
 | Task3 | Event-driven C4 + риски | `Task3/insuretech_c4_event_driven.drawio`, `Task3/problems_and_risks.md` |
-| Task4 | ОСАГО C4 | `Task4/insuretech_c4_osago.drawio` |
-| Task5 | GraphQL-схема | `Task5/schema.graphql` |
-| Task6 | Nginx конфигурация для rate limiting | `Task6/nginx.conf` |
+| Task4 | ОСАГО-сценарий в C4 | `Task4/insuretech_c4_osago.drawio` |
+| Task5 | GraphQL схема | `Task5/schema.graphql` |
+| Task6 | Конфигурация Nginx | `Task6/nginx.conf` |
 
-## Как повторить Task2
-1. Перейти в `Task2` и прочитать `README.md` — там полный журнал команд, описание `scale-memory.jpg` и `scale-rps.jpg`.
-2. Запустить `minikube start --driver=docker`, затем `kubectl apply` для deployment/service и `hpa-memory`.
-3. Держать `kubectl port-forward svc/insuretech-app-service 30080:80`, запускать Locust из `Task2/locustfile.py`, и фиксировать HPA/Pods под нагрузкой.
+### Как проверить Task2
+1. Открой `Task2/README.md`: там журнал команд, ссылки на скрины и инструкции.
+2. Запусти `minikube start --driver=docker`, затем `kubectl apply -f Task2/deployment.yaml`, `Task2/service.yaml`, `Task2/hpa-memory.yaml`.
+3. Держи `kubectl port-forward svc/insuretech-app-service 30080:80` и запускай `locust -f Task2/locustfile.py --host http://127.0.0.1:30080 --headless -u 20 -r 5 --run-time 1m`.
 
-## Коммиты
-Применяется схема `do/so/in/ex` (см. `Task2/README.md` и `../README.md`), чтобы описывать действие, эффект, файлы и пример.
-
-## Доказательства
-- `Task2/scale-memory.jpg` — HPA + `kubectl get pods`
-- `Task2/scale-rps.jpg` / `Task2/scale-rps-aux.jpg` — Locust (+ `kubectl top pods`)
-
-## Общие ссылки
-- `sprints/8s/README.md` — дополнительный обзор всего Sprint 8 (таблица, контекст, способом проверки).
+Ссылки на доказательства:
+- `Task2/scale-memory.jpg`
+- `Task2/scale-rps.jpg`, `Task2/scale-rps-aux.jpg`
