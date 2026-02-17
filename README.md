@@ -19,3 +19,7 @@
 Ссылки на доказательства:
 - `Task2/scale-memory.jpg`
 - `Task2/scale-rps.jpg`, `Task2/scale-rps-aux.jpg`
+
+> Для подачи PR: создайте ветку `sprint8-pr2`, запушьте (`git push -u origin sprint8-pr2`), откройте `https://github.com/Anton19840712/8s_highload/pull/new/sprint8-pr2` и заполните описание, перечислив Task1–Task6 и результаты Task2.
+
+> Для PR создайте ветку `sprint8-pr2`, запушьте её (`git push -u origin sprint8-pr2`), затем откройте `https://github.com/Anton19840712/8s_highload/pull/new/sprint8-pr2` и сформулируйте описание с задачами Task1–Task6 и результатами Task2.
